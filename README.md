@@ -10,7 +10,7 @@ En está practica se realiza la conexión con Firebase para guardar datos, de ig
 
 [![Captura-4.png](https://i.postimg.cc/cHGqHQW5/Captura-4.png)](https://postimg.cc/PLyVVvPm)
 
-[![Captura-5.png](https://i.postimg.cc/tR1PyWJH/Captura-5.png)](https://postimg.cc/yWHWyJ0f)
+[![Captura-5.png](https://i.postimg.cc/fy51Bp96/Captura-5.png)](https://postimg.cc/304LwL9B)
 
 [![Captura-6.png](https://i.postimg.cc/tCWxnbFS/Captura-6.png)](https://postimg.cc/QHNtvR41)
 
