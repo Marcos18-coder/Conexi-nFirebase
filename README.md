@@ -1,6 +1,6 @@
 Conexión con Firebase
 
-En está practica se realiza la conexión con Firebase para guardar datos, de igual manera para guaradar archivos como imangenes y también se pueden eliminar esas imagenes guardados en Firebase.
+En está practica se realiza la conexión con Firebase para guardar datos, de igual manera para guardar archivos como imágenes y también se pueden eliminar esas imagenes guardados en Firebase.
 
 [![Captura-1.png](https://i.postimg.cc/BZ1sJnGz/Captura-1.png)](https://postimg.cc/HjHF2Hn0)
 
