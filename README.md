@@ -12,6 +12,6 @@ En está practica se realiza la conexión con Firebase para guardar datos, de ig
 
 [![Captura-5.png](https://i.postimg.cc/fy51Bp96/Captura-5.png)](https://postimg.cc/304LwL9B)
 
-[![Captura-6.png](https://i.postimg.cc/tCWxnbFS/Captura-6.png)](https://postimg.cc/QHNtvR41)
+[![Captura-6.png](https://i.postimg.cc/fRV1fHTr/Captura-6.png)](https://postimg.cc/k2djnvSQ)
 
 [![Captura-7.png](https://i.postimg.cc/PJZPDbvp/Captura-7.png)](https://postimg.cc/Lg99K1T2)
