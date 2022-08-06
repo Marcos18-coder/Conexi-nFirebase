@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web_Imagenes</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<img src="Pikachu.jpg" class="rounded-circle" width="200" height="200">
+	</div>	<br>
+	<div class="container">
+		<div class="row"id="resultado">
+			
+		</div>
+	</div>
+
+
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBdXaBftsEjTUQJnZflfQ4QC8ib5uhys_Q",
+    authDomain: "webimagenes-d55cf.firebaseapp.com",
+    databaseURL: "https://webimagenes-d55cf.firebaseio.com",
+    projectId: "webimagenes-d55cf",
+    storageBucket: "webimagenes-d55cf.appspot.com",
+    messagingSenderId: "1078649508348",
+    appId: "1:1078649508348:web:bc6b7bd7c65cc02f3e6279",
+    measurementId: "G-0REFJ1BBVQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var db=firebase.database();
+  var nodo=db.ref("imagenes/");
+  var nodo_texto=db.ref("info/texto");
+
+  $(document).raedy(function(){
+    //var comentarios={};
+    var color=null;
+    nodo_texto.on("value", function(valor){
+      color=valor.val();
+      ponerImagen(color);
+    });
+
+
+  function ponerImagen(color) {
+  	var comentarios={};
+  	nodo.on('value', function(info){
+  		comentarios=info.val();
+  		$("#resultado").empty();
+
+  		//Recorre la imformacion(comentario)
+  		$.each(comentarios, function(indice, valor){
+  			if(valor.nombre == color){
+  				var fila="<div class ='card col-sm-6 ffset-3'>";
+  					fila+="<img class='card-img-top' height='400' src='"+valor.imagen+"'>";
+  					fila+="<div class='card-body'><h2 class='text-center'>"+valor.nombre+"</h2></div></div>";
+
+  					$(fila).appendTo("#resultado");
+  			}
+  		});
+       });
+  	}//termina funcion poneImagen
+   });
+
+</script>
+
+</body>
+</html>

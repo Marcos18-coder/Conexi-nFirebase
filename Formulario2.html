@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario 2</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Formulario con Firebase</h1>
+		<h3>Metodo Set</h3>	
+	</div>
+
+	<div class="container">
+		<form>
+		<div class="row">
+			<div class="form-group col-md-6">
+				<label class="control-label"><h4>Nombre</h4></label>
+				<input type="text" name="txtNombre" id="nombre" class="form-control">
+			</div>
+		</div>
+
+		<div class="row">	
+			<div class="form-group">
+				<label class="control-label"><h4>Comentario</h4></label>
+				<textarea cols="100" rows="5" class="form-control" id="comentario"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			    <div class="form-group">
+			    	<button type="button" class="btn btn-primary form-control"  value="register" id="guardar">Guardar</button>	
+			    </div>
+			</div>
+
+		</form>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPmW5mUxBk1G56ZoQpQtGvTP_d3-UhybM",
+    authDomain: "datosweb-b65e7.firebaseapp.com",
+    databaseURL: "https://datosweb-b65e7.firebaseio.com",
+    projectId: "datosweb-b65e7",
+    storageBucket: "datosweb-b65e7.appspot.com",
+    messagingSenderId: "1016016376989",
+    appId: "1:1016016376989:web:84e663a07c5d11f9fa7074",
+    measurementId: "G-V7W18T7LMM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+	//Para indicar que vamos a realizar la conexion con la BD y es guardado en una variable
+  var db=firebase.database();
+
+  //acceder al buton con jquery
+  $("#guardar").click(function(){
+  	//alert("prueba"); //Hacer una prueba o alerta si funciona el buton
+
+  	//Obtener valores de las cajas de texto
+  	var nom=$("#nombre").val();
+  	var coment=$("#comentario").val();
+
+  	//alert(nom+" "+coment); //para verificar que si funcionan las cajas de texto
+
+  	var nodo=db.ref("informacion") //va a crear el nodo raiz y se guardara en una variable
+
+  	//para enviar informacion a la BD
+  	nodo.set({ //el metodo set resivira objetos --set	Escribe o reemplaza datos en una ruta de acceso definida
+  		nombre:nom,
+  		comentario:coment
+
+  	});
+  });
+
+</script>
+</body>
+</html>

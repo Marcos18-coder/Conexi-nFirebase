@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Conexion a Firebase 1</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1> Conexion a Firebase</h1>
+	</div>
+
+  <div class="container">
+    <h2 id="enca"></h2>
+  </div>
+
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBYB31JWE7y6Z5ECjfTIf7SWNV1WeBP00g",
+    authDomain: "prueba-8a52c.firebaseapp.com",
+    databaseURL: "https://prueba-8a52c.firebaseio.com",
+    projectId: "prueba-8a52c",
+    storageBucket: "prueba-8a52c.appspot.com",
+    messagingSenderId: "902035596490",
+    appId: "1:902035596490:web:8f49248ecbd2e688c94033",
+    measurementId: "G-392NJDN835"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+	//lo que se va a copiar de la pagina
+	var elemento=document.getElementById('enca');
+	var cont=firebase.database().ref().child('saludo'); //para ingresar a la base de datos - tener acceso.ref(nod raiz).child(nodo hijo)-para tener acceso al nodo hijo
+
+	cont.on('value', snap=>elemento.innerText=snap.val()); //el metodo on permite obtener el valor del nodo
+	//elemento.innerText para agregar el contendo al elemento  
+
+</script>
+</body>
+</html>

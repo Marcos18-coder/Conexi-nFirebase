@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario 6</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Formulario Imagen</h1>
+	</div>
+
+	<div class="container">
+		<form>
+
+			<div class="row">
+			<div class="form-group col-md-5">
+				<label class="control-label">Color</label>
+				<input type="text" name="txtNombre" id="color" class="form-control">
+			</div>
+			</div>
+
+			<!--div class="row">
+				<div class="form-group col-md-5">
+					<label class="control-label">Desacripción</label>
+					<input type="text" name="txtdes" id="descripcion" class="form-control">
+				</div>
+			</div-->
+
+			<div class="row">
+			<div class="form-group col-md-5">
+					<label class="control-label">Seleccionar imagen</label>
+					<input type="file" name="txtFile" id="ima" class="form-control">
+			</div>
+	</div>
+
+	<div class="row">
+			    <div class="form-group">
+			    	<button type="button" class="btn btn-primary form-control" id="guardar">Guardar</button>	
+			    </div>
+			</div>
+
+		</form>
+		<br><br>
+
+		<!--div class="row" id="result">
+			
+		</div-->
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBdXaBftsEjTUQJnZflfQ4QC8ib5uhys_Q",
+    authDomain: "webimagenes-d55cf.firebaseapp.com",
+    databaseURL: "https://webimagenes-d55cf.firebaseio.com",
+    projectId: "webimagenes-d55cf",
+    storageBucket: "webimagenes-d55cf.appspot.com",
+    messagingSenderId: "1078649508348",
+    appId: "1:1078649508348:web:bc6b7bd7c65cc02f3e6279",
+    measurementId: "G-0REFJ1BBVQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+	//Para indicar que vamos a realizar la conexion con la BD y es guardado en una variable
+  var db=firebase.database();
+  var nodo=db.ref("imagenes"); //va a crear el nodo raiz y se guardara en una variable
+  var imagn;
+
+	//almacena la ruta temporal
+  $("#ima").change(function(){
+  	var descrip=new FileReader();//inician un lector FileReader
+  	descrip.readAsDataURL(this.files[0]);
+  	descrip.onloadend=function(){
+  		imagn=descrip.result;
+  	};
+  });
+
+  //acceder al buton con jqueryprevi
+  $("#guardar").click(function(){
+  	//alert("prueba"); //Hacer una prueba o alerta si funciona el buton
+
+  	//Obtener valores de las cajas de texto
+  	var nom=$("#color").val();
+  	//var des=$("#descripcion").val();
+
+  	if(!imagn){//para asegurar que la variable tenga contenido
+  		imagn="NONE";// si no es null
+  	}
+
+  	//alert(nom+" "+coment); //para verificar que si funcionan las cajas de texto
+
+  	//para enviar informacion a la BD
+  	nodo.push({ //push	Agrega a una lista de datos en la base de datos. Cada vez que envías un nodo nuevo a una lista, tu base de datos genera una clave única
+  		nombre:nom,
+  		//descripcion:des,
+  		imagen:imagn
+  	});
+  	$("#nombre").val('');
+  	//$("#descripcion").val('');
+  	$("#ima").val(null);
+  });
+
+  /*$(document).ready(function(){
+  			var datosMostrar={};
+  			nodo.on('value', function(info){
+  				datosMostrar=info.val();
+  				$("#result").empty();
+  				//recorrer la informacion(comentarios)
+  				$.each(datosMostrar, function(indice,valor){
+  					var fila="<div class ='card col-sm-3'>";
+  					fila+="<img class='card-img-top' src='"+valor.imagen+"'>";
+  					fila+="<div class='card-body'><h4>"+valor.nombre+"</h4>";
+  					fila+="<h6>"+valor.descripcion+"<h6>";
+					 fila+='<button type="button" class="btn btn-danger" onclick="borrarProducto(\''+indice+'\')">Eliminar</button></div></div></div>';
+
+  					$(fila).appendTo("#result");
+
+  			});
+  		});
+  });*/
+
+</script>
+
+</body>
+</html>
