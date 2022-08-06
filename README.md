@@ -2,16 +2,16 @@ Conexión con Firebase
 
 En está practica se realiza la conexión con Firebase para guardar datos, mediante un formulario se agregan los datos y son guardados en Firebase. También se guardan imagenes, las imágenes guadados en Firebase se pueden visualizar en un interfaz creada, cada imagen tiene un nombre o descripción de ello y la opción de eliminar imagen, si se elimina también se elimina en Firebase.
 
-[![Captura-1.png](https://i.postimg.cc/BZ1sJnGz/Captura-1.png)](https://postimg.cc/HjHF2Hn0)
+[![Captura-1.png](https://i.postimg.cc/pdbtsghk/Captura-1.png)](https://postimg.cc/fVKFLqv0)
 
-[![Captura-2.png](https://i.postimg.cc/3x9W2xNB/Captura-2.png)](https://postimg.cc/K1kZ2Fnk)
+[![Captura-2.png](https://i.postimg.cc/wBXYZ0Dz/Captura-2.png)](https://postimg.cc/7CZRT1Bt)
 
-[![Captura-3.png](https://i.postimg.cc/HLVW50fY/Captura-3.png)](https://postimg.cc/3yQHQG8V)
+[![Captura-3.png](https://i.postimg.cc/k47PmKyb/Captura-3.png)](https://postimg.cc/94gnP4Km)
 
-[![Captura-4.png](https://i.postimg.cc/cHGqHQW5/Captura-4.png)](https://postimg.cc/PLyVVvPm)
+[![Captura-4.png](https://i.postimg.cc/NMbqfFNP/Captura-4.png)](https://postimg.cc/qhtZ1JH8)
 
-[![Captura-5.png](https://i.postimg.cc/fy51Bp96/Captura-5.png)](https://postimg.cc/304LwL9B)
+[![Captura-5.png](https://i.postimg.cc/FznM3qXy/Captura-5.png)](https://postimg.cc/XBd10sJq)
 
-[![Captura-6.png](https://i.postimg.cc/fRV1fHTr/Captura-6.png)](https://postimg.cc/k2djnvSQ)
+[![Captura-6.png](https://i.postimg.cc/PrCsTt12/Captura-6.png)](https://postimg.cc/bsfFRfCt)
 
-[![Captura-7.png](https://i.postimg.cc/PJZPDbvp/Captura-7.png)](https://postimg.cc/Lg99K1T2)
+[![Captura-7.png](https://i.postimg.cc/FswtK2Zm/Captura-7.png)](https://postimg.cc/3djfSfVb)
