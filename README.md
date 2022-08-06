@@ -6,7 +6,7 @@ Está practica se realiza la conexión con Firebase para guardar datos, de igual
 
 [![Captura-2.png](https://i.postimg.cc/3x9W2xNB/Captura-2.png)](https://postimg.cc/K1kZ2Fnk)
 
-[![Captura-3.png](https://i.postimg.cc/RVH0pTFN/Captura-3.png)](https://postimg.cc/D87F8L1T)
+[![Captura-3.png](https://i.postimg.cc/HLVW50fY/Captura-3.png)](https://postimg.cc/3yQHQG8V)
 
 [![Captura-4.png](https://i.postimg.cc/CKmMnPv6/Captura-4.png)](https://postimg.cc/jWnYGXYz)
 
